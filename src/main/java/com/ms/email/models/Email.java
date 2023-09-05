@@ -18,17 +18,17 @@ public class Email implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private final String ownerRef; // proprietário de quem ta mandando o email, id do usuário pra quem esta sendo enviado o email
-    private final String emailFrom;
-    private final String emailTo;
-    private final String subject;
+    private String ownerRef; // proprietário de quem ta mandando o email, id do usuário pra quem esta sendo enviado o email
+    private String emailFrom;
+    private String emailTo;
+    private String subject;
 
     @Column(columnDefinition = "TEXT")
 
-    private final String text;
+    private String text;
 
-    private final LocalDateTime sendDateEmail;
-    private final StatusEmail statusEmail;
+    private LocalDateTime sendDateEmail;
+    private StatusEmail statusEmail;
 
     public Email() {
         this(
@@ -94,5 +94,37 @@ public class Email implements Serializable {
 
     public StatusEmail getStatusEmail() {
         return statusEmail;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setOwnerRef(String ownerRef) {
+        this.ownerRef = ownerRef;
+    }
+
+    public void setEmailFrom(String emailFrom) {
+        this.emailFrom = emailFrom;
+    }
+
+    public void setEmailTo(String emailTo) {
+        this.emailTo = emailTo;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setSendDateEmail(LocalDateTime sendDateEmail) {
+        this.sendDateEmail = sendDateEmail;
+    }
+
+    public void setStatusEmail(StatusEmail statusEmail) {
+        this.statusEmail = statusEmail;
     }
 }
